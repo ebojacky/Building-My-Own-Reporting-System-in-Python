@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>iReport📊</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo"><h1>i  R e p o r t  📊</h1></div>
+
+    </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+           <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="form-container">
+        <form method="POST" action="{{ url_for('login') }}">
+        {{ form.csrf_token }}
+        <div class="form-label">{{form.username.label(class_="form-row1")}}
+            {{form.username(class_="form-input form-row2")}}</div>
+        <div class="form-label">{{form.password.label(class_="form-row1")}}
+            {{form.password(class_="form-input form-row2")}}</div>
+        <div class="form-label"><span class="form-row1"></span>
+            {{form.submit(class_="form-submit form-row2")}}</div>
+        </form>
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+html
+{
+    color-scheme: dark;
+}
+body {
+    color: gray;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Brush Script MT', cursive;
+    color: salmon;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    box-shadow: 3px 3px 5px salmon;
+}
+
+.form-container{
+    margin-top: 40px;
+    width: 50%;
+}
+
+.form-label{
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    color: #B2B2B2;
+    font-size: 1.2rem;
+}
+
+.form-submit {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    font-size: 1.2rem;
+    color: salmon;
+}
+
+.form-submit:hover {
+  background: salmon;
+  color: white;
+  border: 2px solid white;
+}
+
+.form-row1 {
+    flex-basis: 20%;
+}
+.form-row2 {
+    flex-basis: 80%;
+}
+
+.logout-submit {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    width: 10%;
+    height: auto;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    outline: 2px;
+    text-align: center;
+    color: salmon;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a:hover {
+background: salmon;
+color: white;
+}

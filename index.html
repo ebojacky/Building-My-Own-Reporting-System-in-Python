@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>iReport📊</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo"><h1>i  R e p o r t  📊</h1></div>
+
+    </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+           <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="form-container">
+        <form method="POST" action="{{ url_for('home') }}">
+        {{ form.csrf_token }}
+        <div class="form-label">{{form.event.label(class_="form-row1")}}
+            {{form.event(class_="form-input form-row2")}}</div>
+        <div class="form-label">{{form.start.label(class_="form-row1")}}
+            {{form.start(class_="form-input form-row2")}}</div>
+        <div class="form-label">{{form.end.label(class_="form-row1")}}
+            {{form.end(class_="form-input form-row2")}}</div>
+        <div class="form-label">{{form.data_source.label(class_="form-row1")}}
+            {{form.data_source(class_="form-input form-row2")}}</div>
+        <div class="form-label">{{form.aggregation.label(class_="form-row1")}}
+            {{form.aggregation(class_="form-input form-row2")}}</div>
+        <div class="form-label"><span class="form-row1"></span>
+            {{form.submit(class_="form-submit form-row2")}}</div>
+        </form>
+        <br>
+    </div>
+    <div>
+    {% if plot_ready: %}
+        <iframe src="{{ url_for('temp', temp_html=temp_html) }}"  width="100%" height="800px" frameborder="0"></iframe>
+        <div class="logout-submit"><a href="{{ url_for('logout') }}"> Log Me Out👋 </a></div><p> Developed by IN Team. Vodafone Ghana © 2022. </p>
+    {% endif %}
+    </div>
+</body>
+</html>
